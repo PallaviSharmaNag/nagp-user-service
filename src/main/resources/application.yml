@@ -1,0 +1,23 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: user
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST}:3306/nagp_microservices?useSSL=false
+    username: root
+    password: ${MYSQL_ROOT_PASSWORD}        
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+opentracing:
+  jaeger:
+    udp-sender:
+      host: jaeger-agent
+      port: 6831        
+        
+      
+ 

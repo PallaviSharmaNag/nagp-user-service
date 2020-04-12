@@ -1,7 +1,18 @@
 package com.nagarro.nagp.userservice.model;
-	
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+@Entity
+@Table(name = "user")
+@EntityListeners(AuditingEntityListener.class)
 public class User {
 
+	@Id
+	private Long id;
 	private String email;
 	private String name;
 	private int age;	
